@@ -73,29 +73,29 @@ function Board() {
 
   const validatePlay = () => {
 
-    if (game[0][0] == turn && game[0][1] == turn && game[0][2] == turn) {
+    if (game[0][0] === turn && game[0][1] === turn && game[0][2] === turn) {
       setWinner(turn)
     }
-    if (game[1][0] == turn && game[1][1] == turn && game[1][2] == turn) {
+    if (game[1][0] === turn && game[1][1] === turn && game[1][2] === turn) {
       setWinner(turn)
     }
-    if (game[2][0] == turn && game[2][1] == turn && game[2][2] == turn) {
+    if (game[2][0] === turn && game[2][1] === turn && game[2][2] === turn) {
       setWinner(turn)
     }
 
-    if (game[0][0] == turn && game[1][0] == turn && game[2][0] == turn) {
+    if (game[0][0] === turn && game[1][0] === turn && game[2][0] === turn) {
       setWinner(turn)
     }
-    if (game[0][1] == turn && game[1][1] == turn && game[2][1] == turn) {
+    if (game[0][1] === turn && game[1][1] === turn && game[2][1] === turn) {
       setWinner(turn)
     }
-    if (game[0][2] == turn && game[1][2] == turn && game[2][2] == turn) {
+    if (game[0][2] === turn && game[1][2] === turn && game[2][2] === turn) {
       setWinner(turn)
     }
-    if (game[0][0] == turn && game[1][1] == turn && game[2][2] == turn) {
+    if (game[0][0] === turn && game[1][1] === turn && game[2][2] === turn) {
       setWinner(turn)
     }
-    if (game[0][2] == turn && game[1][1] == turn && game[2][0] == turn) {
+    if (game[0][2] === turn && game[1][1] === turn && game[2][0] === turn) {
       setWinner(turn)
     }
     if((!game[0].includes("") && !game[1].includes("") && !game[2].includes(""))){
@@ -113,12 +113,12 @@ function Board() {
   }
 
   const handleClick = (order, row) => {
-    if (winner == "None" && (game[0].includes("") || game[1].includes("") || game[2].includes(""))) {
+    if (winner === "None" && (game[0].includes("") || game[1].includes("") || game[2].includes(""))) {
       let _game = [...game]
       _game[row][order] = turn
       setGame(_game)
       validatePlay()
-      setTurn(turn == player1 ? player2 : player1)
+      setTurn(turn === player1 ? player2 : player1)
     }
   }
   return (
